@@ -7,14 +7,15 @@ import { ContactList } from './ContactList/ContactList';
 import { GlobalStyle } from './GlobalStyle';
 import { Container } from './App.styled';
 const localStorageKey = 'updateContacts';
+const getInitialContacts = () => {
+  const savedContacts = window.localStorage.getItem(localStorageKey);
+  if (savedContacts !== null) {
+    return JSON.parse(savedContacts);
+  }
+  return initialContacts;
+};
 export const App = () => {
-  const [contacts, setContacts] = useState(() => {
-    const savedContacts = window.localStorage.getItem(localStorageKey);
-    if (savedContacts !== null) {
-      return JSON.parse(savedContacts);
-    }
-    return initialContacts;
-  });
+  const [contacts, setContacts] = useState(getInitialContacts);
   const [filter, setFilter] = useState('');
 
   const handleFilter = evt => {
