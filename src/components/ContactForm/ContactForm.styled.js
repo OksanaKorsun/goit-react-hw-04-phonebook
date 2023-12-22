@@ -9,7 +9,7 @@ export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 340px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 20px;

@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { GlobalStyle } from './GlobalStyle';
-import { Container } from './App.styled';
+import { Container, Title } from './App.styled';
 const localStorageKey = 'updateContacts';
 const getInitialContacts = () => {
   const savedContacts = window.localStorage.getItem(localStorageKey);
@@ -53,7 +53,7 @@ export const App = () => {
   };
   return (
     <Container>
-      <h1>Phonebook</h1>
+      <Title>Phonebook</Title>
       <ContactForm updateContact={addContact} />
       <h2>Contacts</h2>
       <Filter filter={filter} onUpdateFilter={handleFilter} />
